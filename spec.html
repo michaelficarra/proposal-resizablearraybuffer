@@ -962,7 +962,7 @@
       <p>The following are guidelines for ECMAScript implementers implementing GrowableSharedArrayBuffer.</p>
       <p>We recommend GrowableSharedArrayBuffer be implemented as in-place growth via reserving virtual memory up front.</p>
       <p>Because grow operations can be concurrent with memory accesses on a GrowableSharedArrayBuffer, the constraints of the memory model require that even unordered accesses do not "tear" (bits of their values will not be mixed). In practice, this means the underlying data block of a GrowableSharedArrayBuffer cannot be grown by being copied without stopping the world. We do not recommend stopping the world as an implementation strategy because it introduces a serialization point and its slowness.</p>
-      <p>If a host does not have virtual memory, such as those running on embedded devices, we recommend ignoring the _requestedMaxByteLength_ parameter, throwing on calling GorwableSharedArrayBuffer.prototype.grow, and communicating to users that GrowableSharedArrayBuffers cannot be grown.</p>
+      <p>If a host does not have virtual memory, such as those running on embedded devices, we recommend ignoring the _requestedMaxByteLength_ parameter, throwing on calling GrowableSharedArrayBuffer.prototype.grow, and communicating to users that GrowableSharedArrayBuffers cannot be grown.</p>
     </emu-note>
 </emu-clause>
 
